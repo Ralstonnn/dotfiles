@@ -325,6 +325,13 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn(terminal .. " -e ranger") end,
         {description = "open thunar"}),
 
+    -- Monitors
+    awful.key({modkey, "Shift", "Control"}, "q", function () awful.util.spawn(terminal .. " -e /home/ralstonnn/.config/awesome/scripts/turnOffSecondMonitor.sh") end,
+        {description = "Turn off second monitor (GamingMode)"}),
+    awful.key({modkey, "Shift", "Control"}, "w", function () awful.util.spawn(terminal .. " -e /home/ralstonnn/.config/awesome/scripts/turnOnSecondMonitor.sh") end,
+        {description = "Turn on second monitor (WorkingMode)"}),
+
+
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
