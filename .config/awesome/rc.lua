@@ -23,6 +23,10 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+
+username = "ralstonnn"
+
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -51,7 +55,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 --beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.init("/home/ralstonnn/.config/awesome/theme.lua")
+beautiful.init("/home/"..username.."/.config/awesome/theme.lua")
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
@@ -326,9 +330,9 @@ globalkeys = gears.table.join(
         {description = "open thunar"}),
 
     -- Monitors
-    awful.key({modkey, "Shift", "Control"}, "q", function () awful.util.spawn(terminal .. " -e /home/ralstonnn/.config/awesome/scripts/turnOffSecondMonitor.sh") end,
+    awful.key({modkey, "Shift", "Control"}, "q", function () awful.util.spawn(terminal .. " -e /home/"..username.."/.config/awesome/scripts/turnOffSecondMonitor.sh") end,
         {description = "Turn off second monitor (GamingMode)"}),
-    awful.key({modkey, "Shift", "Control"}, "w", function () awful.util.spawn(terminal .. " -e /home/ralstonnn/.config/awesome/scripts/turnOnSecondMonitor.sh") end,
+    awful.key({modkey, "Shift", "Control"}, "w", function () awful.util.spawn(terminal .. " -e /home/"..username.."/.config/awesome/scripts/turnOnSecondMonitor.sh") end,
         {description = "Turn on second monitor (WorkingMode)"}),
 
 
