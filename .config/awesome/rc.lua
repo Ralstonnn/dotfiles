@@ -68,6 +68,7 @@ autorunApps =
    "nitrogen --restore",
    "picom",
    "setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'", -- keyboard layout switcher
+   "nm-applet",
 }
 if autorun then
    for app = 1, #autorunApps do

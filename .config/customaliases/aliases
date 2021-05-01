@@ -9,14 +9,7 @@ alias pipifpp='pip install $(cat .pythonpackages)'
 alias convertdtr='python3 $HOME/.config/zsh-config/Programs/DTRConverter/CurrencyConverterDollarsToRubles.py'
 
 # Git
-alias gts='git status'
-alias gta='git add'
-alias gtaa='git add -A'
-alias gtcm='git commit -m'
-alias gtpsh='git push'
-alias gtpl='git pull'
-alias gtch='git checkout'
-alias gtdcm='git add -A && git commit -m "update" && git push'
+alias gitdcm='git add -A && git commit -m "update" && git push'
 
 # NPM
 alias npms='npm start'
