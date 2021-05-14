@@ -4,7 +4,7 @@ alias nv='nvim'
 # Python
 alias venv='source ./venv/bin/activate'
 alias rment='python3 $HOME/.config/zsh-config/Programs/EnterRemover/enter-remover.py'
-alias cppf='python3 $HOME/.config/zsh-config/Programs/PythonPackageFileCreator/ppfc.py $(pip freeze)'
+alias cppf='echo $(pip3 freeze) > .pythonpackages'
 alias pipifpp='pip install $(cat .pythonpackages)'
 alias convertdtr='python3 $HOME/.config/zsh-config/Programs/DTRConverter/CurrencyConverterDollarsToRubles.py'
 
