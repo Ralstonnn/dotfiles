@@ -327,7 +327,7 @@ globalkeys = gears.table.join(
         {description = "open pavucontrol", group = "launcher"}),
     awful.key({ }, "#107", function () awful.util.spawn("flameshot gui") end,
         {description = "flameshot on print screen click"}),
-    awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn(terminal .. " -e ranger") end,
+    awful.key({ modkey, "Shift" }, "f", function () awful.spawn("thunar") end,
         {description = "open thunar"}),
 
     -- Monitors

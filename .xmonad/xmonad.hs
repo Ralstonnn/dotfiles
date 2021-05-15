@@ -319,7 +319,7 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do 
         spawnOnce "nitrogen --restore &"
-        spawnOnce "picom &"
+        spawnOnce "picom --experimental-backends &"
         --spawnOnce "stalonetray -c ~/.config/stalonetray/stalonetrayrc"
         spawnOnce "nm-applet &"
         setWMName "LG3D"
