@@ -21,9 +21,9 @@ alias flaskrn='flask run'
 alias nv='nvim'
 
 # Pacman
-alias install='sudo pacman -S'
-alias remove='sudo pacman -R'
-alias update='sudo pacman -Syu'
+alias install='yay -S'
+alias remove='yay -R'
+alias update='yay -Syu'
 
 # MariaDB
 alias smdb='sudo systemctl start mariadb'
@@ -33,3 +33,4 @@ alias stmdb='sudo systemctl stop mariabd'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME/'
 alias nvconfig='/usr/bin/git --git-dir=$HOME/GitHub/.myneovimconfig --work-tree=$HOME/.config'
 alias alconfig='/usr/bin/git --git-dir=$HOME/GitHub/.customaliases --work-tree=$HOME/.config/customaliases'
+alias stolyarovgit='/usr/bin/git --git-dir=$HOME/Documents/Programming/.stolyarovBooks --work-tree=$HOME/Documents/Programming'
