@@ -13,6 +13,7 @@ alias gitdcm='git add -A && git commit -m "update" && git push'
 
 # NPM
 alias npms='npm start'
+alias npmd='npm run dev'
 
 # Flask
 alias flaskrn='flask run'
