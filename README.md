@@ -1,1 +1,1 @@
-# Use `stow .` command to semilink dotfiles to home directory
+## Use `stow .` command to semilink dotfiles to home directory
