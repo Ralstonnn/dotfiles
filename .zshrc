@@ -21,9 +21,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add customAliases
 source "$HOME/.config/custom_aliases/aliases"
 # Add secret aliases and env variables
-secter_aliases_path="$HOME/.config/secret_aliases/aliases"
-if [ -f secter_aliases_path ]; then
-  source secter_aliases_path
+secret_aliases_path="$HOME/.config/secret_aliases/aliases"
+if [ -f $secret_aliases_path ]; then
+  source $secret_aliases_path
 fi
 
 alias cds="cd ~/.config/custom_scripts"
