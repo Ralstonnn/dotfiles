@@ -28,7 +28,7 @@ alias ys='yarn run test'
 # Work
 alias vzfs='nvm use 14.7.0 && cd ~/Work/vznaniya/front-student'
 alias vzft='nvm use 14.15.0 && cd ~/Work/vznaniya/front-teacher'
-alias vzf='nvm use 16.16.0 && cd ~/Work/vznaniya/front'
+alias vzf='nvm use 20.0.0 && cd ~/Work/vznaniya/front'
 alias vzb='nvm use 14.7.0 && cd ~/Work/vznaniya/back'
 alias vzg='nvm use 14.7.0 && cd ~/Work/vznaniya/front-games'
 alias bmf='nvm use 18.13.0 && cd ~/Work/bodyMap/front-web'
@@ -47,7 +47,6 @@ alias nvv='nvim ~/.config/nvim'
 alias nvca='nvim ~/.config/customaliases'
 alias nvvz='nvm use default && nvim'
 alias cnv='cd ~/.config/nvim'
-alias vim='nvim'
 
 # Neovide
 alias nvd='neovide'

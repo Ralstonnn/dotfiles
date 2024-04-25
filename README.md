@@ -11,3 +11,13 @@ cd dotfiles
 ```
 stow .
 ```
+
+### To use tmux install tmux and tmuxifier
+To install tmux use
+```
+brew install tmux
+```
+To install tmuxifier use 
+```
+git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
+```

@@ -135,6 +135,8 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export EDITOR="nvim"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -144,5 +146,12 @@ export PATH=~/bin:$PATH
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 eval "$(zoxide init --cmd cd zsh)"
+
+# Enable tmuxifier if it exists
+if [ -d $HOME/.tmuxifier ]; then
+  export PATH="$HOME/.tmuxifier/bin:$PATH"
+  eval "$(tmuxifier init -)"
+fi
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
