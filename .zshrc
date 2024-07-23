@@ -26,6 +26,11 @@ if [ -f $secret_aliases_path ]; then
   source $secret_aliases_path
 fi
 
+secret_env_path="$HOME/.config/secret_env/env"
+if [ -f $secret_env_path ]; then
+  source $secret_env_path
+fi
+
 alias cds="cd ~/.config/custom_scripts"
 alias cda="cd ~/.config/custom_aliases"
 alias cdn="cd ~/.config/nvim"
@@ -154,7 +159,7 @@ if [ -d $HOME/.tmuxifier ]; then
 fi
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # LLVM Export
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
