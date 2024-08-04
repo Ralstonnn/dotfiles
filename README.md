@@ -7,9 +7,13 @@ git clone git@github.com:Ralstonnn/dotfiles.git
 cd dotfiles
 ```
 
-### Then use GNU stow to create symlinks
+### Then use GNU stow to create symlinks or run init script
 ```
 stow .
+```
+##### Or
+```
+~/dotfiles/init.sh
 ```
 
 ### To use tmux install tmux and tmuxifier
