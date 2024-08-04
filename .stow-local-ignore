@@ -27,3 +27,6 @@ _darcs
 
 \.vscode
 \.idea
+
+init.sh
+

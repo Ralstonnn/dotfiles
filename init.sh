@@ -16,5 +16,6 @@ if [[ ! -d $HOME/.config ]]; then
     mkdir $HOME/.config
 fi
 
-stow $HOME/dotfiles
+cd $HOME/dotfiles
+stow .
 
