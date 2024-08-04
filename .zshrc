@@ -127,13 +127,9 @@ OS=(
 CURRENT_OS=$($HOME/.config/custom_scripts/getCurrentOS.sh)
 
 # Source additional zsh configs
-ZSH_DIR=$HOME/.config/zsh
-if [[ -d $ZSH_DIR ]] && [[ "$(ls -A "$ZSH_DIR" | wc -l)" -ne 0 ]]; then
-  for file in $HOME/.config/zsh/*; do
-    if [[ -f $file ]]; then
-      source $file
-    fi
-  done
+ZSH_INDEX=$HOME/.config/zsh/index.sh
+if [[ -f $ZSH_INDEX ]]; then
+  source $ZSH_INDEX
 fi
 
 # Add secret aliases and env variables
