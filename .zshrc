@@ -18,23 +18,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Add customAliases
-source "$HOME/.config/custom_aliases/aliases"
-# Add secret aliases and env variables
-secret_aliases_path="$HOME/.config/secret_aliases/aliases"
-if [ -f $secret_aliases_path ]; then
-  source $secret_aliases_path
-fi
-
-secret_env_path="$HOME/.config/secret_env/env"
-if [ -f $secret_env_path ]; then
-  source $secret_env_path
-fi
-
-
-# alias vzf="cd ~/Work/vznaniya/front && nvm use 16.16.0"
-# alias bmf="cd ~/Work/bodyMap/front-web && nvm use 18.13.0"
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -128,6 +111,13 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+##########################################################################################
+#
+# MY CONFIG
+#
+##########################################################################################
+
 declare -A OS
 OS=(
   [mac]="macos"
@@ -135,6 +125,19 @@ OS=(
   [windows]="windows"
 )
 CURRENT_OS=$($HOME/.config/custom_scripts/getCurrentOS.sh)
+
+# Add customAliases
+source "$HOME/.config/custom_aliases/aliases"
+# Add secret aliases and env variables
+secret_aliases_path="$HOME/.config/secret_aliases/aliases"
+if [ -f $secret_aliases_path ]; then
+  source $secret_aliases_path
+fi
+
+secret_env_path="$HOME/.config/secret_env/env"
+if [ -f $secret_env_path ]; then
+  source $secret_env_path
+fi
 
 export EDITOR="nvim"
 
