@@ -31,18 +31,6 @@ if [ -f $secret_env_path ]; then
   source $secret_env_path
 fi
 
-alias cds="cd ~/.config/custom_scripts"
-alias cda="cd ~/.config/custom_aliases"
-alias cdn="cd ~/.config/nvim"
-
-alias nva="nvim ~/.config/custom_aliases/aliases"
-alias nvs="nvim ~/.config/custom_scripts/work.sh"
-
-alias work="nvm use 16.16.0 && cd ~/Work/vznaniya/front && (~/.config/custom_scripts/work.sh)"
-
-alias parseJson="java $HOME/Programming/usefulPrograms/JsonConverter/main.class"
-alias py3="python3"
-alias book="evince ~/Documents/Books/CleanCode.pdf &"
 
 # alias vzf="cd ~/Work/vznaniya/front && nvm use 16.16.0"
 # alias bmf="cd ~/Work/bodyMap/front-web && nvm use 18.13.0"
@@ -140,6 +128,14 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+declare -A OS
+OS=(
+  [mac]="macos"
+  [linux]="linux"
+  [windows]="windows"
+)
+CURRENT_OS=$($HOME/.config/custom_scripts/getCurrentOS.sh)
+
 export EDITOR="nvim"
 
 export NVM_DIR="$HOME/.nvm"
@@ -150,7 +146,11 @@ export PATH=~/bin:$PATH
 
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-eval "$(zoxide init --cmd cd zsh)"
+
+# If zoxide is installed use it instead of cd
+if [ -x "$(command -v zoxide)" ]; then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
 
 # Enable tmuxifier if it exists
 if [ -d $HOME/.tmuxifier ]; then
@@ -158,10 +158,16 @@ if [ -d $HOME/.tmuxifier ]; then
   eval "$(tmuxifier init -)"
 fi
 
-
-source <(fzf --zsh)
+# Use fzf if installed
+if [ -x "$(command -v fzf)" ]; then
+  if [[ $CURRENT_OS == $OS[mac] ]]; then
+    source <(fzf --zsh)
+  fi
+fi
 
 # LLVM Export
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+if [[ -d /opt/homebrew/opt/llvm ]]; then
+  export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+  export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+fi
