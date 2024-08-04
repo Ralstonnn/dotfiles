@@ -126,8 +126,16 @@ OS=(
 )
 CURRENT_OS=$($HOME/.config/custom_scripts/getCurrentOS.sh)
 
-# Add customAliases
-source "$HOME/.config/custom_aliases/aliases"
+# Source additional zsh configs
+ZSH_DIR=$HOME/.config/zsh
+if [[ -d $ZSH_DIR ]] && [[ "$(ls -A "$ZSH_DIR" | wc -l)" -ne 0 ]]; then
+  for file in $HOME/.config/zsh/*; do
+    if [[ -f $file ]]; then
+      source $file
+    fi
+  done
+fi
+
 # Add secret aliases and env variables
 secret_aliases_path="$HOME/.config/secret_aliases/aliases"
 if [ -f $secret_aliases_path ]; then
