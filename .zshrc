@@ -118,63 +118,9 @@ source $ZSH/oh-my-zsh.sh
 #
 ##########################################################################################
 
-declare -A OS
-OS=(
-  [mac]="macos"
-  [linux]="linux"
-  [windows]="windows"
-)
-CURRENT_OS=$($HOME/.config/custom_scripts/getCurrentOS.sh)
-
 # Source additional zsh configs
 ZSH_INDEX=$HOME/.config/zsh/index.sh
 if [[ -f $ZSH_INDEX ]]; then
   source $ZSH_INDEX
 fi
 
-# Add secret aliases and env variables
-secret_aliases_path="$HOME/.config/secret_aliases/aliases"
-if [ -f $secret_aliases_path ]; then
-  source $secret_aliases_path
-fi
-
-secret_env_path="$HOME/.config/secret_env/env"
-if [ -f $secret_env_path ]; then
-  source $secret_env_path
-fi
-
-export EDITOR="nvim"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH=~/bin:$PATH
-
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
-# If zoxide is installed use it instead of cd
-if [ -x "$(command -v zoxide)" ]; then
-  eval "$(zoxide init --cmd cd zsh)"
-fi
-
-# Enable tmuxifier if it exists
-if [ -d $HOME/.tmuxifier ]; then
-  export PATH="$HOME/.tmuxifier/bin:$PATH"
-  eval "$(tmuxifier init -)"
-fi
-
-# Use fzf if installed
-if [ -x "$(command -v fzf)" ]; then
-  if [[ $CURRENT_OS == $OS[mac] ]]; then
-    source <(fzf --zsh)
-  fi
-fi
-
-# LLVM Export
-if [[ -d /opt/homebrew/opt/llvm ]]; then
-  export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-  export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
-fi
