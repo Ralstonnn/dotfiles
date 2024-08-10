@@ -4,10 +4,10 @@ OS_ENUM=(
   [linux]="linux"
   [windows]="windows"
 )
-declare -r CURRENT_OS=$($HOME/.config/custom_scripts/getCurrentOS.sh)
+CURRENT_OS=$($HOME/.config/custom_scripts/getCurrentOS.sh)
 
-declare -r CONFIG_ZSH_ROOT=$HOME/.config/zsh
-declare -r LOCAL_ZSH_INDEX=$HOME/.config/zsh_local/index.sh
+CONFIG_ZSH_ROOT=$HOME/.config/zsh
+LOCAL_ZSH_INDEX=$HOME/.config/zsh-local/index.sh
 
 export EDITOR="nvim"
 

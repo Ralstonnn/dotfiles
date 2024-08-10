@@ -71,4 +71,5 @@ alias nvml="nvm use --lts"
 # Other
 alias cdn="cd ~/.config/nvim"
 alias cda="cd ~/.config/custom_aliases"
+alias sz="source $HOME/.zshrc"
 

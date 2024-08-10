@@ -1,4 +1,4 @@
-declare -r CONFIG_ZSH_PROGRAMS_DIR=$HOME/.config/zsh/programs
+CONFIG_ZSH_PROGRAMS_DIR=$HOME/.config/zsh/programs
 
 source $CONFIG_ZSH_PROGRAMS_DIR/fzf.sh
 source $CONFIG_ZSH_PROGRAMS_DIR/llvm.sh
