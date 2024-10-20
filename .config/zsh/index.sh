@@ -11,6 +11,8 @@ LOCAL_ZSH_INDEX=$HOME/.config/zsh-local/index.sh
 
 export EDITOR="nvim"
 
+# Sourcind path
+source $CONFIG_ZSH_ROOT/path.sh
 # Sourcing aliases
 source $CONFIG_ZSH_ROOT/aliases.sh
 
