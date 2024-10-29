@@ -16,11 +16,11 @@ source $CONFIG_ZSH_ROOT/path.sh
 # Sourcing aliases
 source $CONFIG_ZSH_ROOT/aliases.sh
 
+# Sourcing terminal apps
+source $CONFIG_ZSH_ROOT/programs/index.sh
+
 # Source local zsh configs
 if [[ -f $LOCAL_ZSH_INDEX ]]; then
   source $LOCAL_ZSH_INDEX
 fi
-
-# Sourcing terminal apps
-source $CONFIG_ZSH_ROOT/programs/index.sh
 
