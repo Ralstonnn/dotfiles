@@ -11,6 +11,10 @@ LOCAL_ZSH_INDEX=$HOME/.config/zsh-local/index.sh
 
 export EDITOR="nvim"
 
+# Autoloading completion
+autoload -Uz compinit
+compinit
+
 # Sourcind path
 source $CONFIG_ZSH_ROOT/path.sh
 # Sourcing aliases
