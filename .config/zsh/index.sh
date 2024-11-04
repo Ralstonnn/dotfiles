@@ -11,6 +11,15 @@ LOCAL_ZSH_INDEX=$HOME/.config/zsh-local/index.sh
 
 export EDITOR="nvim"
 
+# Set history file path and size
+export HISTFILE=~/.zsh_history
+export HISTSIZE=5000            # Adjust to your preference
+export SAVEHIST=10000           # Adjust to your preference
+# Append commands to history file
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
 # Autoloading completion
 autoload -Uz compinit
 compinit
