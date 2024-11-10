@@ -8,7 +8,11 @@ alias convertdtr='python3 $HOME/.config/zsh-config/Programs/DTRConverter/Currenc
 # Git
 alias gitdcm='git add -A && git commit -m "update" && git push'
 alias dfu='git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME/dotfiles commit -am "update" && git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME/dotfiles push'
-alias lzg="lazygit"
+alias lzg='lazygit'
+alias gw='git worktree'
+alias gwa='git worktree add'
+alias gwr='git worktree remove'
+alias gwl='git worktree list'
 
 # NPM
 alias npms='npm start'

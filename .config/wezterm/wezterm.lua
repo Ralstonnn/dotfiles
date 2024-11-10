@@ -18,4 +18,8 @@ config.window_padding = {
 
 config.enable_tab_bar = false
 
+local hypr_config = require("configs.hyprland")
+
+for k,v in pairs(hypr_config) do config[k] = v end
+
 return config

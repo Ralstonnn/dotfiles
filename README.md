@@ -16,6 +16,11 @@ stow .
 ~/dotfiles/init.sh
 ```
 
+### Add glodal gitignore
+```
+git config --global core.excludesfile ~/.gitignore-global
+```
+
 ### To use tmux install tmux and tmuxifier
 To install tmux use
 ```
