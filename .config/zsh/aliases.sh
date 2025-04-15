@@ -43,9 +43,8 @@ alias nvv='nvim ~/.config/nvim'
 alias nvca='nvim ~/.config/customaliases'
 alias nvvz='nvm use default && nvim'
 alias cnv='cd ~/.config/nvim'
-
-# Neovide
-alias nvd='neovide'
+# Pull latest Neovim config
+alias updnv='git --git-dir="$HOME/.config/nvim/.git" restore lazy-lock.json && git --git-dir="$HOME/.config/nvim/.git" fetch && git --git-dir="$HOME/.config/nvim/.git" pull'
 
 # Pacman
 alias install='yay -S'

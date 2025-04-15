@@ -21,5 +21,7 @@ stow .
 
 if [[ -x "$(command -v git)" ]]; then
     git config --global core.excludesfile ~/.gitignore-global
+    git submodule init
+    git submodule update
 fi
 
