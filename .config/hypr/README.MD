@@ -1,0 +1,9 @@
+# Hyprland config documentation
+
+## Apps that need to be installed
+
+```
+network-manager-applet && ghostty && dolphin && wofi && waybar && dunst && xdg-desktop-portal-hyprland && qt5-wayland && qt6-wayland
+```
+
+Also install some [polkit agent](https://wiki.hyprland.org/Hypr-Ecosystem/hyprpolkitagent/)
