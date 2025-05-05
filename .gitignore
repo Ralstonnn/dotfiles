@@ -4,3 +4,5 @@
 
 # Ignore tmux plugins dir
 \.config/tmux/plugins
+
+\.config/hypr/configs/local

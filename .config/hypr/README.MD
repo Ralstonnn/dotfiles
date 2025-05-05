@@ -7,3 +7,5 @@ network-manager-applet && ghostty && dolphin && wofi && waybar && dunst && xdg-d
 ```
 
 Also install some [polkit agent](https://wiki.hyprland.org/Hypr-Ecosystem/hyprpolkitagent/)
+
+## When running first time might get an error because of sourcing local configs run ```hyprctl reload``` (mainMod + X)
