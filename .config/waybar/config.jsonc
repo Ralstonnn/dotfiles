@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/language", "hyprland/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "custom/mem", "battery", "tray", "custom/lock"],
+    "modules-right": ["pulseaudio", "memory", "cpu", "battery", "power-profiles-daemon", "tray", "custom/lock"],
 
 
     //***************************
@@ -56,10 +56,15 @@
         "min-length": 13
     },
 
-    "custom/mem": {
-        "format": "{} ",
-        "interval": 3,
-        "exec": "free -h | awk '/Mem:/{printf $3}'",
+    "cpu": {
+        "interval": 30,
+        "format": "{}% ",
+        "max-length": 10
+    },
+
+    "memory": {
+        "format": "{used}GiB ",
+        "interval": 30,
         "tooltip": false
     },
 
@@ -74,6 +79,18 @@
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         "format-icons": ["","","","",""]
+    },
+
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": " ",
+        "power-saver": ""
+      }
     },
 
     "tray": {
