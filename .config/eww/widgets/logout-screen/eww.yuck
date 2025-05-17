@@ -1,0 +1,41 @@
+(defwindow logout-screen
+  :monitor '[1, 0]'
+  :geometry (geometry :x 0 :y 0 :width "100%" :height "100%" :anchor "bottom right")
+  :windowtype "normal"
+  :wm-ignore false
+  (logout-buttons))
+
+(defwidget logout-buttons []
+  (box :class "logout-buttons-container"
+    (overlay
+      (logout-close-button)
+      (box :class "logout-buttons-wrapper"
+           :orientation "horizontal"
+           :halign "center"
+           :valign "center"
+           :vexpand true
+           :spacing 40
+        (logout-button :class "logout-button-restart"
+                       :text "" 
+                       :command "reboot")
+        (logout-button :class "logout-button-shutdown"
+                       :text ""
+                       :command "shutdown now")))))
+
+(defwidget logout-button [text command ?class]
+  (button :class "logout-button ${class}"
+          :onclick "${command}"
+          :width 250
+          :height 200
+          :active true
+          "${text}"))
+
+(defwidget logout-close-button []
+  (button :class "logout-close-button"
+          :onclick "eww close logout-screen"
+          :width 80
+          :height 80
+          :halign "end"
+          :valign "start"
+          ""))
+

@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/language", "hyprland/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "memory", "cpu", "battery", "power-profiles-daemon", "tray", "custom/lock"],
+    "modules-right": ["pulseaudio", "memory", "cpu", "battery", "power-profiles-daemon", "tray", "custom/lock", "custom/logout"],
 
 
     //***************************
@@ -46,7 +46,7 @@
         "format-icons": {
             "headphone": "",
             "hands-free": "",
-            "headset": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -101,6 +101,12 @@
     "custom/lock": {
         "format": "",
         "on-click": "hyprlock",
+        "tooltip": false
+    },
+
+    "custom/logout": {
+        "format": "",
+        "on-click": "eww open logout-screen",
         "tooltip": false
     }
 }

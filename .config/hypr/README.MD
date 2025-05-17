@@ -1,5 +1,7 @@
 # Hyprland config documentation
 
+## Font used in config is Hack Nerd Font Mono
+
 ## Apps that need to be installed
 
 ```
