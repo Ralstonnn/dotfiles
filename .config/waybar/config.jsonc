@@ -38,9 +38,9 @@
         // "scroll-step": 1, // %, can be a float
         "reverse-scrolling": 1,
         "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "  {icon} {format_source}",
-        "format-muted": "  {format_source}",
+        "format-bluetooth": "{volume}% {icon}󰂯 {format_source}",
+        "format-bluetooth-muted": "󰖁 {icon}󰂯 {format_source}",
+        "format-muted": "󰖁 {format_source}",
         "format-source": " {volume}% ",
         "format-source-muted": " ",
         "format-icons": {
@@ -58,12 +58,12 @@
 
     "cpu": {
         "interval": 30,
-        "format": "{}% ",
+        "format": "{}% ",
         "max-length": 10
     },
 
     "memory": {
-        "format": "{used}GiB ",
+        "format": "{used}GiB ",
         "interval": 30,
         "tooltip": false
     },
@@ -75,10 +75,10 @@
         },
         "interval": 30,
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        "format-icons": ["","","","",""]
+        "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾", "󰁿", "󰂀", "󰂂", "󰁹"]
     },
 
     "power-profiles-daemon": {
@@ -86,8 +86,8 @@
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
       "tooltip": true,
       "format-icons": {
-        "default": "",
-        "performance": "",
+        "default": "󱐋",
+        "performance": "󱐋",
         "balanced": " ",
         "power-saver": ""
       }
