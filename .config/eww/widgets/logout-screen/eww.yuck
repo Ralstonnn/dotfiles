@@ -23,21 +23,19 @@
                        :command "shutdown now")))))
 
 (defwidget logout-button [text command ?class]
-  (eventbox :class "logout-button-event-box"
-            :cursor "pointer"
-    (button :class "logout-button ${class}"
-            :onclick "${command}"
-            :width 250
-            :height 200
-            "${text}")))
+  (button :class "logout-button ${class}"
+          :onclick "${command}"
+          :width 250
+          :height 200
+          :active true
+          "${text}"))
 
 (defwidget logout-close-button []
-  (eventbox :cursor "pointer"
-            :halign "end"
-            :valign "start"
-    (button :class "logout-close-button"
-            :onclick "eww close logout-screen"
-            :width 80
-            :height 80
-            "")))
+  (button :class "logout-close-button"
+          :onclick "eww close logout-screen"
+          :width 80
+          :height 80
+          :halign "end"
+          :valign "start"
+          ""))
 
