@@ -1,4 +1,4 @@
 theme = catppuccin-mocha.conf
 font-family = "Hack Nerd Font"
-background-opacity = 0.8
+background-opacity = 0.9
 background-blur = true
