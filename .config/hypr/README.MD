@@ -5,7 +5,7 @@
 ## Apps that need to be installed
 
 ```
-yay -S hyprland hyprpolkitagent network-manager-applet ghostty dolphin wofi waybar dunst xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper hyprlock hyprland-per-window-layout eww obs-studio hyprpicker hyprshot udiskie pipewire pipewire-audio wireplumber pipewire-pulse pipewire-alsa pipewire-jack pavucontrol bluez bluez-utils blueman power-profiles-daemon --needed 
+yay -S hyprland hyprpolkitagent network-manager-applet ghostty dolphin tofi waybar dunst xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper hyprlock hyprland-per-window-layout eww obs-studio hyprpicker hyprshot udiskie pipewire pipewire-audio wireplumber pipewire-pulse pipewire-alsa pipewire-jack pavucontrol bluez bluez-utils blueman power-profiles-daemon --needed 
 ```
 
 ## To enable bluetooth run 
