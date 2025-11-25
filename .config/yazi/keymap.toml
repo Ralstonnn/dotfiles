@@ -1,0 +1,4 @@
+[mgr]
+append_keymap = [
+	{ on = [ "g", "a", "p" ],       run = "cd ~/Work/seller-admin-fe/src/permissions/source",   desc = "Go seller-admin-fe/src/permissions/source" }
+]
