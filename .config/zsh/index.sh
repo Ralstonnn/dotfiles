@@ -20,28 +20,17 @@ setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
-# Autoloading completion for carapace
-# autoload -Uz compinit
-# compinit
 
-source $CONFIG_ZSH_ROOT/programs/oh-my-zsh.sh
-source $CONFIG_ZSH_ROOT/programs/starship.sh
-# source $CONFIG_ZSH_ROOT/programs/carapace.sh
+# Enable zsh-completions use this or carapace
+source $CONFIG_ZSH_ROOT/plugins/zsh-completions.sh
+autoload -Uz compinit; compinit
 
-autoload -U compinit; compinit
+source $CONFIG_ZSH_ROOT/programs/index.sh
 
-source $CONFIG_ZSH_ROOT/programs/fzf.sh
-source $CONFIG_ZSH_ROOT/programs/zsh-autosuggestions.sh # WARNING: Should be loaded after fzf if using fzf-tab plugin
-source $CONFIG_ZSH_ROOT/programs/fast-syntax-highlighting.sh # WARNING: Should be loaded after fzf if using fzf-tab plugin
-source $CONFIG_ZSH_ROOT/programs/zoxide.sh
-source $CONFIG_ZSH_ROOT/programs/nvm.sh
-source $CONFIG_ZSH_ROOT/programs/tmux.sh
-source $CONFIG_ZSH_ROOT/programs/tmuxifier.sh
-source $CONFIG_ZSH_ROOT/programs/yazi.sh
-source $CONFIG_ZSH_ROOT/programs/thefuck.sh
-source $CONFIG_ZSH_ROOT/programs/llvm.sh
-source $CONFIG_ZSH_ROOT/programs/rust.sh
-source $CONFIG_ZSH_ROOT/programs/pyenv.sh
+source $CONFIG_ZSH_ROOT/plugins/fzf-tab.sh # WARNING: Should be the first plugin to load after compinit
+source $CONFIG_ZSH_ROOT/plugins/zsh-autosuggestions.sh
+source $CONFIG_ZSH_ROOT/plugins/fast-syntax-highlighting.sh
+source $CONFIG_ZSH_ROOT/plugins/zsh-better-npm-completion.sh
 
 # Sourcind path
 source $CONFIG_ZSH_ROOT/path.sh
