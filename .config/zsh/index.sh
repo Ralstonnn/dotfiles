@@ -1,8 +1,8 @@
 declare -A OS_ENUM
 OS_ENUM=(
-  [mac]="macos"
-  [linux]="linux"
-  [windows]="windows"
+    [mac]="macos"
+    [linux]="linux"
+    [windows]="windows"
 )
 CURRENT_OS=$($HOME/.config/custom_scripts/getCurrentOS.sh)
 
@@ -20,20 +20,36 @@ setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
-# Autoloading completion
-autoload -Uz compinit
-compinit
+# Autoloading completion for carapace
+# autoload -Uz compinit
+# compinit
+
+source $CONFIG_ZSH_ROOT/programs/oh-my-zsh.sh
+source $CONFIG_ZSH_ROOT/programs/starship.sh
+# source $CONFIG_ZSH_ROOT/programs/carapace.sh
+
+autoload -U compinit; compinit
+
+source $CONFIG_ZSH_ROOT/programs/fzf.sh
+source $CONFIG_ZSH_ROOT/programs/zsh-autosuggestions.sh # WARNING: Should be loaded after fzf if using fzf-tab plugin
+source $CONFIG_ZSH_ROOT/programs/fast-syntax-highlighting.sh # WARNING: Should be loaded after fzf if using fzf-tab plugin
+source $CONFIG_ZSH_ROOT/programs/zoxide.sh
+source $CONFIG_ZSH_ROOT/programs/nvm.sh
+source $CONFIG_ZSH_ROOT/programs/tmux.sh
+source $CONFIG_ZSH_ROOT/programs/tmuxifier.sh
+source $CONFIG_ZSH_ROOT/programs/yazi.sh
+source $CONFIG_ZSH_ROOT/programs/thefuck.sh
+source $CONFIG_ZSH_ROOT/programs/llvm.sh
+source $CONFIG_ZSH_ROOT/programs/rust.sh
+source $CONFIG_ZSH_ROOT/programs/pyenv.sh
 
 # Sourcind path
 source $CONFIG_ZSH_ROOT/path.sh
 # Sourcing aliases
 source $CONFIG_ZSH_ROOT/aliases.sh
 
-# Sourcing terminal apps
-source $CONFIG_ZSH_ROOT/programs/index.sh
-
 # Source local zsh configs
 if [[ -f $LOCAL_ZSH_INDEX ]]; then
-  source $LOCAL_ZSH_INDEX
+    source $LOCAL_ZSH_INDEX
 fi
 
