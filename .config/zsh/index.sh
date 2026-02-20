@@ -22,7 +22,7 @@ setopt SHARE_HISTORY
 
 
 # Enable zsh-completions use this or carapace
-source $CONFIG_ZSH_ROOT/plugins/zsh-completions.sh
+# source $CONFIG_ZSH_ROOT/plugins/zsh-completions.sh
 autoload -Uz compinit; compinit
 
 source $CONFIG_ZSH_ROOT/programs/index.sh
