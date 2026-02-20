@@ -29,5 +29,5 @@ _darcs
 \.idea
 
 init.sh
-packageInstallScripts
+installScripts
 

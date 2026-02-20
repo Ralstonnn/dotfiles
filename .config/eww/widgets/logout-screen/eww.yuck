@@ -17,10 +17,10 @@
            :spacing 40
         (logout-button :class "logout-button-restart"
                        :text "" 
-                       :command "reboot")
+                       :command "hyprshutdown -t 'Restarting...' --post-cmd 'reboot'")
         (logout-button :class "logout-button-shutdown"
                        :text ""
-                       :command "shutdown now")))))
+                       :command "hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'")))))
 
 (defwidget logout-button [text command ?class]
   (button :class "logout-button ${class}"
