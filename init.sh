@@ -21,6 +21,9 @@ if [[ ! -d $HOME/Pictures ]]; then
     mkdir $HOME/Pictures
 fi
 
+# Install tmux plugins
+source $HOME/dotfiles/.config/tmux/init_plugins.sh
+
 cd $HOME/dotfiles
 stow .
 
