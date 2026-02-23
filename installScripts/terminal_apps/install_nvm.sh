@@ -2,7 +2,7 @@
 # INSTALL NVM AND NODE #
 ########################
 if [ ! -d  $HOME/.nvm ]; then
-    cd ~/Downloads/
+    cd $HOME/Downloads/
 
     SHELL_FILE=$HOME/.zshrc
     if [ ! -f $SHELL_FILE ]; then

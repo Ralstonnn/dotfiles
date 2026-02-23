@@ -8,10 +8,10 @@ source $CURRENT_DIRECTORY/install_nvm.sh
 # INSTALL TMUX #
 ################
 if [ ! -x "$(command -v tmux)" ]; then
-    git clone https://github.com/tmux/tmux.git ~/Downloads/tmux
-    cd ~/Downloads/tmux
+    git clone https://github.com/tmux/tmux.git $HOME/Downloads/tmux
+    cd $HOME/Downloads/tmux
     sh autogen.sh
     ./configure
     make && sudo make install
-    rm -rf ~/Downloads/tmux
+    rm -rf $HOME/Downloads/tmux
 fi
