@@ -6,11 +6,11 @@ BASE_SCRIPT_FOLDER=$HOME/dotfiles/installScripts
 # Add carapace repo #
 #####################
 if [[ ! -f /etc/yum.repos.d/fury.repo ]]; then
-    sudo echo -e "[fury]
-	name=Gemfury Private Repo
-	baseurl=https://yum.fury.io/rsteube/
-	enabled=1
-	gpgcheck=0" | sudo tee /etc/yum.repos.d/fury.repo
+    echo -e "[fury]
+name=Gemfury Private Repo
+baseurl=https://yum.fury.io/rsteube/
+enabled=1
+gpgcheck=0" | sudo tee /etc/yum.repos.d/fury.repo
 fi
 
 ####################
