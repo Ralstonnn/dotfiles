@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENT_DIRECTORY=~/dotfiles/installScripts/terminal_apps
+CURRENT_DIRECTORY=$HOME/dotfiles/installScripts/terminal_apps
 
 source $CURRENT_DIRECTORY/install_nvm.sh
 

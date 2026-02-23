@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TMUX_PLUGINS_DIR=$HOME/.config/tmux/plugins 
+TMUX_PLUGINS_DIR=$HOME/dotfiles/.config/tmux/plugins 
 
 if [[ ! -d $TMUX_PLUGINS_DIR ]]; then
 	mkdir $TMUX_PLUGINS_DIR 
