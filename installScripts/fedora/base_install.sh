@@ -27,6 +27,13 @@ if ! dnf repo list --enabled | grep lazygit; then
     sudo dnf copr enable dejan/lazygit -y
 fi
 
+####################
+# Enable yazi repo #
+####################
+if ! dnf repo list --enabled | grep yazi; then
+    sudo dnf copr enable lihaohong/yazi -y
+fi
+
 #######################
 # Enable ghostty repo #
 #######################
@@ -48,4 +55,4 @@ sudo dnf update -y && sudo dnf upgrade -y
 sudo dnf config-manager setopt google-chrome.enabled=1 -y # Enable google chrome repo
 sudo dnf install -y @development-tools clear git vim neovim tmux zsh\
     carapace-bin zoxide fzf lazygit ripgrep stow starship unzip google-chrome-stable\
-    ghostty
+    ghostty yazi
