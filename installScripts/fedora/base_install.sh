@@ -56,3 +56,9 @@ sudo dnf config-manager setopt google-chrome.enabled=1 -y # Enable google chrome
 sudo dnf install -y @development-tools clear git vim neovim tmux zsh\
     carapace-bin zoxide fzf lazygit ripgrep stow starship unzip google-chrome-stable\
     ghostty yazi
+
+##################
+# Enable flathub #
+##################
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub md.obsidian.Obsidian com.bitwarden.desktop
