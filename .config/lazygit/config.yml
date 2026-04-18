@@ -71,7 +71,7 @@ customCommands:
     loadingText: 'Copying Task Name'
 
   # COMMITS
-  - key: 'M'
+  - key: 'T'
     context: 'files'
     description: "Commit with formatted task name message"
     prompts:
