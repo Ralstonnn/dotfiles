@@ -1,0 +1,87 @@
+customCommands:
+  # WORKTREES
+  - key: "N"
+    context: "worktrees"
+    description: "New worktree in ../{project-name}.worktrees/"
+    prompts:
+      - type: "input"
+        title: "Worktree name ../{project-name}.worktrees/{name}"
+        key: "WorktreeName"
+        initialValue: ""
+      - type: "input"
+        title: "Branch name"
+        key: "BranchName"
+        initialValue: ""
+    command: >
+      bash -c '
+        source $HOME/.config/lazygit/lazygit-functions.sh
+        mkdir -p ../$(projectname).worktrees &&
+        git worktree add ../$(projectname).worktrees/{{ .Form.WorktreeName }} -b {{ .Form.BranchName }}
+      '
+    loadingText: 'Creating worktree'
+  - key: "E"
+    context: "worktrees"
+    description: "New worktree in ../{project-name}.worktrees/ Existing branch"
+    prompts:
+      - type: "input"
+        title: "Worktree name ../{project-name}.worktrees/{name}"
+        key: "WorktreeName"
+        initialValue: ""
+      - type: "input"
+        title: "Branch name"
+        key: "BranchName"
+        initialValue: ""
+    command: >
+      bash -c '
+        source $HOME/.config/lazygit/lazygit-functions.sh
+        mkdir -p ../$(projectname).worktrees &&
+        git worktree add ../$(projectname).worktrees/{{ .Form.WorktreeName }} {{ .Form.BranchName }}
+      '
+    loadingText: 'Creating worktree'
+
+  #LOCAL BRANCHES
+  - key: 'N'
+    context: 'localBranches'
+    description: "Create and switch to dev/release branch"
+    prompts:
+      - type: 'menu'
+        title: 'What kind of branch is it?'
+        key: 'BranchType'
+        options:
+          - name: 'dev'
+            description: 'a dev branch'
+            value: 'dev'
+          - name: 'release'
+            description: 'a release branch'
+            value: 'release'
+      - type: 'input'
+        title: 'What is the new branch name?'
+        key: 'BranchName'
+        initialValue: ''
+    command: "git switch -c {{.Form.BranchType}}/{{.Form.BranchName}}"
+    loadingText: 'Creating branch'
+  - key: 'T'
+    context: 'localBranches'
+    description: "Copy task name"
+    command: >
+      bash -c '
+        source $HOME/.config/lazygit/lazygit-functions.sh
+        copyTaskName
+      '
+    loadingText: 'Copying Task Name'
+
+  # COMMITS
+  - key: 'M'
+    context: 'files'
+    description: "Commit with formatted task name message"
+    prompts:
+      - type: "input"
+        title: "Commit message [Task Name]"
+        key: "Message"
+        initialValue: ""
+    command: >
+      bash -c '
+        branch=$(git branch --show-current | awk -F/ "{print \$NF}")
+        git commit -m "[${branch}] {{ .Form.Message }}"
+      '
+    loadingText: 'Commiting'
