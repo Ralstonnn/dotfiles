@@ -60,7 +60,7 @@ customCommands:
         initialValue: ''
     command: "git switch -c {{.Form.BranchType}}/{{.Form.BranchName}}"
     loadingText: 'Creating branch'
-  - key: 'T'
+  - key: '<c-n>'
     context: 'localBranches'
     description: "Copy task name"
     command: >
