@@ -1,4 +1,6 @@
 .idea
+.zed
+.vscode
 .conform.json
 Taskfile.local.yml
 CustomTasksLocal/*
