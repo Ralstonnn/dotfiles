@@ -40,7 +40,7 @@ customCommands:
     loadingText: 'Creating worktree'
 
   #LOCAL BRANCHES
-  - key: 'N'
+  - key: 'C'
     context: 'localBranches'
     description: "Create and switch to dev/release branch"
     prompts:
