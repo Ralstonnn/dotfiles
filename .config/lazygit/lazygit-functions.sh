@@ -25,6 +25,20 @@ createWorktreeCustom() {
     fi
 }
 
+createBranchCustom() {
+    local mode="$1"
+    local branchPrefix="$2"
+    local branchName="$3"
+
+    local branchNameFinal="${branchPrefix}${branchName}"
+
+    if [ "$mode" = "switch" ]; then
+        git switch -c "$branchNameFinal"
+    else
+        git branch "$branchNameFinal"
+    fi
+}
+
 copyTaskName() {
     local task=$(git branch --show-current | awk -F/ '{print $NF}')
 

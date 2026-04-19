@@ -40,11 +40,9 @@ customCommands:
         title: "Branch name"
         key: "BranchName"
         initialValue: ""
-    command: >
-      bash -c '
-        source $HOME/.config/lazygit/lazygit-functions.sh
-        createWorktreeCustom {{ .Form.Type }} {{ .Form.WorktreeName }} {{ .Form.BranchPrefix }} {{ .Form.BranchName }}
-      '
+    command: |
+      source $HOME/.config/lazygit/lazygit-functions.sh
+      createWorktreeCustom {{ .Form.Type }} {{ .Form.WorktreeName }} {{ .Form.BranchPrefix }} {{ .Form.BranchName }}
     loadingText: "Creating worktree"
 
   #LOCAL BRANCHES
@@ -54,31 +52,43 @@ customCommands:
     prompts:
       - type: "menu"
         title: "What kind of branch is it?"
+        key: "Mode"
+        options:
+          - key: "s"
+            name: "create and switch"
+            description: "Create branch and switch to it"
+            value: "switch"
+          - key: "c"
+            name: "create"
+            description: "Create branch without switching"
+            value: "create"
+      - type: "menu"
+        title: "What kind of branch is it?"
         key: "BranchType"
         options:
           - key: "d"
             name: "dev"
-            description: "a dev branch"
-            value: "dev"
+            description: "a dev branch (dev/)"
+            value: "dev/"
           - key: "r"
             name: "release"
-            description: "a release branch"
-            value: "release"
+            description: "a release branch (release/)"
+            value: "release/"
       - type: "input"
         title: "What is the new branch name?"
         key: "BranchName"
         initialValue: ''
-    command: "git switch -c {{.Form.BranchType}}/{{.Form.BranchName}}"
+    command: |
+      source $HOME/.config/lazygit/lazygit-functions.sh
+      createBranchCustom {{.Form.Mode}} {{.Form.BranchType}} {{.Form.BranchName}}
     loadingText: "Creating branch"
 
   - key: "<c-n>"
     context: "localBranches"
     description: "Copy task name"
-    command: >
-      bash -c '
-        source $HOME/.config/lazygit/lazygit-functions.sh
-        copyTaskName
-      '
+    command: |
+      source $HOME/.config/lazygit/lazygit-functions.sh
+      copyTaskName
     loadingText: "Copying Task Name"
 
   # COMMITS
@@ -90,9 +100,7 @@ customCommands:
         title: "Commit message [Task Name]"
         key: "Message"
         initialValue: ""
-    command: >
-      bash -c '
-        branch=$(git branch --show-current | awk -F/ "{print \$NF}")
-        git commit -m "[${branch}] {{ .Form.Message }}"
-      '
+    command: |
+      branch=$(git branch --show-current | awk -F/ "{print \$NF}")
+      git commit -m "[${branch}] {{ .Form.Message }}"
     loadingText: "Committing"
