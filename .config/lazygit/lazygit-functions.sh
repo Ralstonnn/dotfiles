@@ -40,7 +40,8 @@ createBranchCustom() {
 }
 
 copyTaskName() {
-    local task=$(git branch --show-current | awk -F/ '{print $NF}')
+    local branchName="$1"
+    local task="${branchName##*/}"
 
     if command -v wl-copy >/dev/null 2>&1; then
         echo -n "$task" | wl-copy  >/dev/null 2>&1

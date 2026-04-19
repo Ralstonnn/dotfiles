@@ -88,7 +88,7 @@ customCommands:
     description: "Copy task name"
     command: |
       source $HOME/.config/lazygit/lazygit-functions.sh
-      copyTaskName
+      copyTaskName {{.SelectedLocalBranch.Name}}
     loadingText: "Copying Task Name"
 
   # COMMITS
