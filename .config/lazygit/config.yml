@@ -20,6 +20,22 @@ customCommands:
         title: "Worktree name ../{project-name}.worktrees/{name}"
         key: "WorktreeName"
         initialValue: ""
+      - type: "menu"
+        title: "Select branch prefix"
+        key: "BranchPrefix"
+        options:
+          - key: "c"
+            name: "custom"
+            description: "don't prefill prefix"
+            value: ""
+          - key: "d"
+            name: "dev"
+            description: "a dev branch (dev/)"
+            value: "dev/"
+          - key: "r"
+            name: "release"
+            description: "a release branch (release/)"
+            value: "release/"
       - type: "input"
         title: "Branch name"
         key: "BranchName"
@@ -29,9 +45,9 @@ customCommands:
         source $HOME/.config/lazygit/lazygit-functions.sh
         mkdir -p ../$(projectname).worktrees &&
         if [ "{{ .Form.Type }}" = "new" ]; then
-          git worktree add ../$(projectname).worktrees/{{ .Form.WorktreeName }} -b {{ .Form.BranchName }}
+          git worktree add ../$(projectname).worktrees/{{ .Form.WorktreeName }} -b {{ .Form.BranchPrefix }}{{ .Form.BranchName }}
         else
-          git worktree add ../$(projectname).worktrees/{{ .Form.WorktreeName }} {{ .Form.BranchName }}
+          git worktree add ../$(projectname).worktrees/{{ .Form.WorktreeName }} {{ .Form.BranchPrefix }}{{ .Form.BranchName }}
         fi
       '
     loadingText: "Creating worktree"
