@@ -43,12 +43,7 @@ customCommands:
     command: >
       bash -c '
         source $HOME/.config/lazygit/lazygit-functions.sh
-        mkdir -p ../$(projectname).worktrees &&
-        if [ "{{ .Form.Type }}" = "new" ]; then
-          git worktree add ../$(projectname).worktrees/{{ .Form.WorktreeName }} -b {{ .Form.BranchPrefix }}{{ .Form.BranchName }}
-        else
-          git worktree add ../$(projectname).worktrees/{{ .Form.WorktreeName }} {{ .Form.BranchPrefix }}{{ .Form.BranchName }}
-        fi
+        createWorktreeCustom {{ .Form.Type }} {{ .Form.WorktreeName }} {{ .Form.BranchPrefix }} {{ .Form.BranchName }}
       '
     loadingText: "Creating worktree"
 

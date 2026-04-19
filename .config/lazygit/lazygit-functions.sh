@@ -1,9 +1,32 @@
-projectname() {
+getProjectName() {
     basename "$(git rev-parse --show-toplevel)"
 }
 
+createWorktreeCustom() {
+    local type="$1"
+    local worktreeName="$2"
+    local branchPrefix="$3"
+    local branchName="$4"
+
+    local projectName=$(getProjectName)
+    local worktreeBasePath="../${projectName}.worktrees"
+    local worktreeDirPath="${worktreeBasePath}/${worktreeName}"
+    local branchNameFinal="${branchPrefix}${branchName}"
+
+
+    if [ ! -d "$worktreeBasePath" ]; then
+        mkdir -p "$worktreeBasePath"
+    fi
+
+    if [ "$type" = "new" ]; then
+        git worktree add "$worktreeDirPath" -b "$branchNameFinal"
+    else
+        git worktree add "$worktreeDirPath" "$branchNameFinal"
+    fi
+}
+
 copyTaskName() {
-    task=$(git branch --show-current | awk -F/ '{print $NF}')
+    local task=$(git branch --show-current | awk -F/ '{print $NF}')
 
     if command -v wl-copy >/dev/null 2>&1; then
         echo -n "$task" | wl-copy  >/dev/null 2>&1
