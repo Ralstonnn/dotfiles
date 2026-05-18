@@ -4,3 +4,4 @@
 .conform.json
 Taskfile.local.yml
 CustomTasksLocal/*
+.local-tasks/*
