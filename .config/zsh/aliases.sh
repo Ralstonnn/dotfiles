@@ -70,6 +70,9 @@ alias bootRun="mvn clean && mvn spring-boot:run"
 alias nvmd="nvm use default"
 alias nvml="nvm use --lts"
 
+# Go Task
+alias taskl="task -t ./Taskfile.local.yml"
+
 # Other
 alias cdn="cd ~/.config/nvim"
 alias cda="cd ~/.config/custom_aliases"
