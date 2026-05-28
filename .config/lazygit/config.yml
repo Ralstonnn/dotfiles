@@ -41,8 +41,10 @@ customCommands:
         key: "BranchName"
         initialValue: ""
     command: |
-      source $HOME/.config/lazygit/lazygit-functions.sh
-      createWorktreeCustom {{ .Form.Type }} {{ .Form.WorktreeName }} {{ .Form.BranchPrefix }} {{ .Form.BranchName }}
+      bash -c "
+        source $HOME/.config/lazygit/lazygit-functions.sh
+        createWorktreeCustom {{ .Form.Type }} {{ .Form.WorktreeName }} {{ .Form.BranchPrefix }} {{ .Form.BranchName }}
+      "
     loadingText: "Creating worktree"
 
   #LOCAL BRANCHES

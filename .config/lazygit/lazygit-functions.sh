@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 getProjectName() {
     basename "$(git rev-parse --show-toplevel)"
 }
@@ -8,7 +10,8 @@ createWorktreeCustom() {
     local branchPrefix="$3"
     local branchName="$4"
 
-    local projectName=$(getProjectName)
+    local projectName="$(getProjectName)"
+    local projectDir="$(git rev-parse --show-toplevel)"
     local worktreeBasePath="../${projectName}.worktrees"
     local worktreeDirPath="${worktreeBasePath}/${worktreeName}"
     local branchNameFinal="${branchPrefix}${branchName}"
@@ -23,6 +26,24 @@ createWorktreeCustom() {
     else
         git worktree add "$worktreeDirPath" "$branchNameFinal"
     fi
+
+    # Check for worktree-file to copy some folders or files
+    # File format should be list of files/directories separated by newlines
+    local worktreeFiles=("worktree.lzg" "worktree.lazygit" "worktree.local.lzg" "worktree.local.lazygit")
+    local -a sourcesToCopy
+
+    for file in "${worktreeFiles[@]}"; do
+        if [[ -f "$file" ]]; then
+            mapfile -t sourcesToCopy < "$file"
+            break;
+        fi
+    done
+
+    for file in "${sourcesToCopy[@]}"; do
+        if [[ -e "$projectDir/$file" ]]; then
+            cp -r "$projectDir/$file" "$worktreeDirPath/"
+        fi
+    done
 }
 
 createBranchCustom() {
