@@ -5,3 +5,6 @@
 Taskfile.local.yml
 CustomTasksLocal/*
 .local-tasks/*
+
+worktree.local.lzg
+worktree.local.lazygit
