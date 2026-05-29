@@ -1,3 +1,3 @@
 if [ -x "$(command -v zellij)" ]; then
-    $(zellij setup --generate-completion zsh)
+    # $(zellij setup --generate-completion zsh)
 fi
