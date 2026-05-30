@@ -160,10 +160,6 @@ keybinds clear-defaults=true {
             MessagePlugin "vim-zellij-navigator" {
                 name "move_focus_or_tab";
                 payload "left";
-
-                // Plugin Configuration
-                move_mod "ctrl"; // Optional, should be added on every move command if changed.
-                use_arrow_keys "false"; // Optional, uses arrow keys instead of hjkl. Should be added to every command where you want to use it.
             };
         }
 
@@ -171,9 +167,6 @@ keybinds clear-defaults=true {
             MessagePlugin "vim-zellij-navigator" {
                 name "move_focus";
                 payload "down";
-
-                move_mod "ctrl";
-                use_arrow_keys "false";
             };
         }
 
@@ -181,9 +174,6 @@ keybinds clear-defaults=true {
             MessagePlugin "vim-zellij-navigator" {
                 name "move_focus";
                 payload "up";
-
-                move_mod "ctrl";
-                use_arrow_keys "false";
             };
         }
 
@@ -191,9 +181,6 @@ keybinds clear-defaults=true {
             MessagePlugin "vim-zellij-navigator" {
                 name "move_focus_or_tab";
                 payload "right";
-
-                move_mod "ctrl"; // Optional, should be added on every command if you want to use it
-                use_arrow_keys "false";
             };
         }
 
@@ -329,7 +316,7 @@ plugins {
     status-bar location="zellij:status-bar"
     strider location="zellij:strider"
     tab-bar location="zellij:tab-bar"
-    vim-zellij-navigator location="https://github.com/hiasr/vim-zellij-navigator/releases/download/0.3.0/vim-zellij-navigator.wasm"
+    vim-zellij-navigator location="file:~/.config/zellij/plugins/vim-zellij-navigator.wasm"
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
