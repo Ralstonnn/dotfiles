@@ -11,7 +11,6 @@ createWorktreeCustom() {
     local branchName="$4"
 
     local projectName="$(getProjectName)"
-    local projectDir="$(git rev-parse --show-toplevel)"
     local worktreeBasePath="../${projectName}.worktrees"
     local worktreeDirPath="${worktreeBasePath}/${worktreeName}"
     local branchNameFinal="${branchPrefix}${branchName}"
@@ -29,12 +28,15 @@ createWorktreeCustom() {
 
     # Check for worktree-file to copy some folders or files
     # File format should be list of files/directories separated by newlines
+    local projectDir="$(git rev-parse --show-toplevel)"
     local worktreeFiles=("worktree.lzg" "worktree.lazygit" "worktree.local.lzg" "worktree.local.lazygit")
     local -a sourcesToCopy
 
     for file in "${worktreeFiles[@]}"; do
-        if [[ -f "$file" ]]; then
-            mapfile -t sourcesToCopy < "$file"
+        if [[ -f "$projectDir/$file" ]]; then
+            while IFS= read -r line; do
+                sourcesToCopy+=("$line")
+            done < "$projectDir/$file"
             break;
         fi
     done
