@@ -1,0 +1,9 @@
+session_name: project_run_horizontal
+
+windows:
+  - layout: main-horizontal
+    options:
+      main-pane-height: 90%
+    panes:
+      -
+      -
