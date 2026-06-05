@@ -2,3 +2,4 @@ theme = catppuccin-mocha.conf
 font-family = "Hack Nerd Font"
 background-blur = true
 
+macos-option-as-alt = left
