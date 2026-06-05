@@ -43,7 +43,7 @@ createWorktreeCustom() {
 
     for file in "${sourcesToCopy[@]}"; do
         if [[ -e "$projectDir/$file" ]]; then
-            cp -r "$projectDir/$file" "$worktreeDirPath/"
+            cp -r "$projectDir/$file" "$worktreeDirPath/$file"
         fi
     done
 }
