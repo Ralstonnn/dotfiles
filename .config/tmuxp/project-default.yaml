@@ -1,4 +1,4 @@
-session_name: project_run_horizontal
+session_name: project-default
 
 windows:
   - layout: main-horizontal
