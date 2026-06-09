@@ -48,18 +48,37 @@ createWorktreeCustom() {
     done
 }
 
-createBranchCustom() {
+createBranch() {
     local mode="$1"
-    local branchPrefix="$2"
-    local branchName="$3"
-
-    local branchNameFinal="${branchPrefix}${branchName}"
+    local branchName="$2"
 
     if [ "$mode" = "switch" ]; then
-        git switch -c "$branchNameFinal"
+        git switch -c "$branchName"
     else
-        git branch "$branchNameFinal"
+        git branch "$branchName"
     fi
+}
+
+createBranchCustom() {
+    local mode="$1"
+    local branchPrefixType="$2"
+    local branchName="$3"
+
+    local -A prefixMap=(
+        ["dev"]="dev/"
+        ["release"]="release/"
+    )
+
+    case $branchPrefixType in
+        "dev" | "release")
+            createBranch "$mode" "${prefixMap[$branchPrefixType]}${branchName}"
+            ;;
+        "both")
+            createBranch "create" "${prefixMap[release]}${branchName}"
+            createBranch "$mode" "${prefixMap[dev]}${branchName}"
+            ;;
+        *) ;;
+    esac
 }
 
 copyTaskName() {
