@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 TMUX_PLUGINS_DIR=$HOME/dotfiles/.config/tmux/plugins
 

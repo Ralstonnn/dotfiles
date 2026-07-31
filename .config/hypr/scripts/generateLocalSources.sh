@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 CONF_DIR="$HOME/.config/hypr/configs/local"
 INCLUDE_FILE="$HOME/.config/hypr/configs/local/include.conf"

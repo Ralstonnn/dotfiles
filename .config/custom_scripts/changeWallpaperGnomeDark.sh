@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Array of all files in wallpapers directory
 wallpapers=(~/Pictures/Wallpapers/*)
