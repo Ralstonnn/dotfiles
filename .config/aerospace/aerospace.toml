@@ -1,6 +1,10 @@
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
 
+# Config version for compatibility and deprecations
+config-version = 2
+auto-reload-config = true
+
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -48,8 +52,31 @@ automatically-unhide-macos-hidden-apps = true
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
-[key-mapping]
-    preset = 'qwerty'
+key-mapping.preset = 'qwerty'
+
+# Auto placing windows
+on-window-detected = [
+    # {
+    #     if = 'test %{app-bundle-id} = com.mitchellh.ghostty',
+    #     run = ['move-node-to-workspace 1'],
+    #     check-further-callbacks = true,
+    # },
+    {
+        if = 'test %{app-bundle-id} = com.google.Chrome',
+        run = ['move-node-to-workspace 2'],
+        check-further-callbacks = true,
+    },
+    {
+        if = 'test %{app-bundle-id} = com.yourcompany.AmneziaVPN',
+        run = ['layout floating', 'move-node-to-workspace 3'],
+        check-further-callbacks = true,
+    },
+    {
+        if = 'test %{app-bundle-id} = md.obsidian',
+        run = ['move-node-to-workspace 4'],
+        check-further-callbacks = true,
+    },
+]
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
