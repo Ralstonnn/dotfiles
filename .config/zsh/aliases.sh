@@ -73,6 +73,9 @@ alias nvml="nvm use --lts"
 # Go Task
 alias taskl="task -t ./Taskfile.local.yml"
 
+# Nix
+alias nixs="nix-shell --run zsh"
+
 # Other
 alias cdn="cd ~/.config/nvim"
 alias cda="cd ~/.config/custom_aliases"
