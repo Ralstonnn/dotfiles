@@ -3,9 +3,9 @@
 
 -- unscale XWayland
 hl.config({
-    xwayland = {
-        force_zero_scaling = true,
-    },
+	xwayland = {
+		force_zero_scaling = true,
+	},
 })
 
 -- Example window rules
