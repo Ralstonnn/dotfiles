@@ -74,7 +74,8 @@ alias nvml="nvm use --lts"
 alias taskl="task -t ./Taskfile.local.yml"
 
 # Nix
-alias nixs="nix-shell --run zsh"
+alias nixs="nix-shell --run $SHELL"
+alias nixd="nix develop -c $SHELL"
 
 # Other
 alias cdn="cd ~/.config/nvim"
