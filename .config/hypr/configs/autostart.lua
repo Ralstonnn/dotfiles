@@ -7,7 +7,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("/usr/bin/hyprland-per-window-layout")
-	hl.exec_cmd("~/.config/hypr/scripts/generateLocalSources.sh")
 
 	hl.exec_cmd("nm-applet &")
 	hl.exec_cmd("waybar")
@@ -15,6 +14,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("blueman-applet")
 	hl.exec_cmd("eww daemon")
 	hl.exec_cmd("udiskie")
+	hl.exec_cmd("AmneziaVPN")
 end)
 
 -- NOTE: Doesn't work well with 2 monitors or need to look it up more
