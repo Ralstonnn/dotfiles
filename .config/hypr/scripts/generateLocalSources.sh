@@ -7,7 +7,7 @@ if [ ! -d "$CONF_DIR" ]; then
     mkdir -p "$CONF_DIR"
 fi
 
-> "$INCLUDE_FILE" # clear the file
+echo "" > "$INCLUDE_FILE" # clear the file
 
 for file in "$CONF_DIR"/*.lua; do
     # Skip if it's the include file itself
