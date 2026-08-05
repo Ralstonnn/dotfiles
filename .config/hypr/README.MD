@@ -15,4 +15,4 @@ sudo systemctl enable --now bluetooth
 
 Also install some [polkit agent](https://wiki.hyprland.org/Hypr-Ecosystem/hyprpolkitagent/)
 
-## When running first time might get an error because of sourcing local configs run ```hyprctl reload``` (mainMod + X)
+## Machine-specific configs (monitors, etc.) live in `configs/local/` and are auto-included via a glob require, no script needed.
