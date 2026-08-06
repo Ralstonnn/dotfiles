@@ -9,3 +9,5 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("HYPRCURSOR_SIZE", "18")
+hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("XCURSOR_SIZE", "18")
