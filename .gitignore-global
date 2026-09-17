@@ -8,3 +8,9 @@ CustomTasksLocal/*
 
 worktree.local.lzg
 worktree.local.lazygit
+
+**/.claude/.cc-writes/
+**/.claude/settings.local.json
+CLAUDE.md
+AGENTS.md
+.codegraph
