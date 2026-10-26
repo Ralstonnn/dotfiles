@@ -46,11 +46,6 @@ alias cnv='cd ~/.config/nvim'
 # Pull latest Neovim config
 alias updnv='git --git-dir="$HOME/.config/nvim/.git" --work-tree="$HOME/.config/nvim" restore lazy-lock.json && git --git-dir="$HOME/.config/nvim/.git" --work-tree="$HOME/.config/nvim" fetch && git --git-dir="$HOME/.config/nvim/.git" --work-tree="$HOME/.config/nvim" pull'
 
-# Pacman
-alias install='yay -S'
-alias remove='yay -Rns'
-alias update='yay -Syu'
-
 # MariaDB
 alias sdb='sudo systemctl start mariadb'
 alias stdb='sudo systemctl stop mariabd'
