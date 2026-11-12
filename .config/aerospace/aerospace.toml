@@ -55,28 +55,28 @@ automatically-unhide-macos-hidden-apps = true
 key-mapping.preset = 'qwerty'
 
 # Auto placing windows
-on-window-detected = [
-    # {
-    #     if = 'test %{app-bundle-id} = com.mitchellh.ghostty',
-    #     run = ['move-node-to-workspace 1'],
-    #     check-further-callbacks = true,
-    # },
-    {
-        if = 'test %{app-bundle-id} = com.google.Chrome',
-        run = ['move-node-to-workspace 2'],
-        check-further-callbacks = true,
-    },
-    {
-        if = 'test %{app-bundle-id} = com.yourcompany.AmneziaVPN',
-        run = ['layout floating', 'move-node-to-workspace 3'],
-        check-further-callbacks = true,
-    },
-    {
-        if = 'test %{app-bundle-id} = md.obsidian',
-        run = ['move-node-to-workspace 4'],
-        check-further-callbacks = true,
-    },
-]
+# on-window-detected = [
+#     {
+#         if = 'test %{app-bundle-id} = com.mitchellh.ghostty',
+#         run = ['move-node-to-workspace 1'],
+#         check-further-callbacks = true,
+#     },
+#     {
+#         if = 'test %{app-bundle-id} = com.google.Chrome',
+#         run = ['move-node-to-workspace 3'],
+#         check-further-callbacks = true,
+#     },
+#     {
+#         if = 'test %{app-bundle-id} = com.yourcompany.AmneziaVPN',
+#         run = ['layout floating', 'move-node-to-workspace 3'],
+#         check-further-callbacks = true,
+#     },
+#     {
+#         if = 'test %{app-bundle-id} = md.obsidian',
+#         run = ['move-node-to-workspace 4'],
+#         check-further-callbacks = true,
+#     },
+# ]
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -89,10 +89,10 @@ on-window-detected = [
 [gaps]
     inner.horizontal = 10
     inner.vertical =   10
-    outer.left =       10
-    outer.bottom =     10
-    outer.top =        10
-    outer.right =      10
+    outer.left =       0
+    outer.bottom =     0
+    outer.top =        0
+    outer.right =      0
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

@@ -27,7 +27,7 @@ alias yds='yarn run dev-ssr'
 alias ydsh='yarn run dev-ssr --host'
 alias yb='yarn run build'
 alias yp='yarn run preview'
-alias ys='yarn run test'
+alias yts='yarn run test'
 
 # Gradle
 alias grn='gradle run'
